@@ -12,3 +12,6 @@ To edit the meta model, change the file `model/FlexDRMetaModel.aird` using Eclip
 
 ## Ecore-Files
 The result is given by the files in the folder `model/`.
+
+## Related
+This work is related to [CustomMADE](https://github.com/schubmat/Custom-MADE).
