@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/de.btu.sst.dr.flexdrmetamodel/src-gen" creationIcons="false"
+    editDirectory="/de.btu.sst.dr.flexdrmetamodel.edit/src-gen" editorDirectory="/de.btu.sst.dr.flexdrmetamodel.editor/src-gen"
+    modelPluginID="de.btu.sst.dr.flexdrmetamodel" modelName="FlexDRMetaModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>FlexDRMetaModel.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="FlexDRMetaModel" basePackage="de.btu.sst.dr" disposableProviderFactory="true"
+      ecorePackage="FlexDRMetaModel.ecore#/">
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//Relationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FlexDRMetaModel.ecore#//Relationship/description"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//PredefinedRelationship"/>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//ArgumentativeRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//ArgumentativeRelationship/object"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//ArgumentativeRelationship/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//DerivativeRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//DerivativeRelationship/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//DerivativeRelationship/src"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//ConsequenceRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//ConsequenceRelationship/result"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//ConsequenceRelationship/option2"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//DecisionProblemOrResult">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//DecisionProblemOrResult/association4"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//DecisionProblemOrResult/association7"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//DecisionProblem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//DecisionProblem/association5"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//DecisionProblem/association6"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//DecisionResult"/>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//GenericRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//GenericRelationship/object"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//DRObject">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//DRObject/association"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//DRObject/association2"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//Statement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//Statement/association3"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//DecisionOption">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//DecisionOption/association9"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//DecisionOption/association8"/>
+    </genClasses>
+    <genClasses ecoreClass="FlexDRMetaModel.ecore#//OptionRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//OptionRelationship/option"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FlexDRMetaModel.ecore#//OptionRelationship/task"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

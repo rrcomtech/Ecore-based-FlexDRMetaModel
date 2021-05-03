@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="FlexDRMetaModel" nsURI="http://www.example.org/FlexDRMetaModel"
+    nsPrefix="FlexDRMetaModel">
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredefinedRelationship" abstract="true"
+      eSuperTypes="#//Relationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentativeRelationship" eSuperTypes="#//PredefinedRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
+        eType="#//DRObject" eOpposite="#//DRObject/association"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" lowerBound="1"
+        upperBound="-1" eType="#//Statement" eOpposite="#//Statement/association3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DerivativeRelationship" eSuperTypes="#//PredefinedRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        upperBound="-1" eType="#//DecisionProblem" eOpposite="#//DecisionProblem/association6"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//DecisionProblemOrResult"
+        eOpposite="#//DecisionProblemOrResult/association4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConsequenceRelationship" eSuperTypes="#//PredefinedRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="result" lowerBound="1"
+        upperBound="-1" eType="#//DecisionProblemOrResult" eOpposite="#//DecisionProblemOrResult/association7"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option2" lowerBound="1"
+        upperBound="-1" eType="#//DecisionOption" eOpposite="#//DecisionOption/association8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecisionProblemOrResult" eSuperTypes="#//DRObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association4" upperBound="-1"
+        eType="#//DerivativeRelationship" eOpposite="#//DerivativeRelationship/src"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association7" upperBound="-1"
+        eType="#//ConsequenceRelationship" eOpposite="#//ConsequenceRelationship/result"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecisionProblem" eSuperTypes="#//DecisionProblemOrResult">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association5" upperBound="-1"
+        eType="#//OptionRelationship" eOpposite="#//OptionRelationship/task"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association6" upperBound="-1"
+        eType="#//DerivativeRelationship" eOpposite="#//DerivativeRelationship/target"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecisionResult" eSuperTypes="#//DecisionProblemOrResult"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GenericRelationship" eSuperTypes="#//Relationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="2"
+        upperBound="2" eType="#//DRObject" eOpposite="#//DRObject/association2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DRObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association" upperBound="-1"
+        eType="#//ArgumentativeRelationship" eOpposite="#//ArgumentativeRelationship/object"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association2" upperBound="-1"
+        eType="#//GenericRelationship" eOpposite="#//GenericRelationship/object"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement" eSuperTypes="#//DRObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association3" upperBound="-1"
+        eType="#//ArgumentativeRelationship" eOpposite="#//ArgumentativeRelationship/statement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecisionOption" eSuperTypes="#//DRObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association9" upperBound="-1"
+        eType="#//OptionRelationship" eOpposite="#//OptionRelationship/option"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="association8" upperBound="-1"
+        eType="#//ConsequenceRelationship" eOpposite="#//ConsequenceRelationship/option2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionRelationship" eSuperTypes="#//PredefinedRelationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" lowerBound="1"
+        upperBound="-1" eType="#//DecisionOption" eOpposite="#//DecisionOption/association9"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="task" lowerBound="1" upperBound="-1"
+        eType="#//DecisionProblem" eOpposite="#//DecisionProblem/association5"/>
+  </eClassifiers>
+</ecore:EPackage>
